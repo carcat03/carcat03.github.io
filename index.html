@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>차정윤 - Visual Designer Portfolio</title>
+    <title>차정윤 - UX/UI Designer & Educator</title>
     <style>
         /* ========== 기본 리셋 및 설정 ========== */
         * {
@@ -136,18 +136,15 @@
 
         .hero-title {
             font-size: 2rem;
-            margin-bottom: 30px;
-            letter-spacing: 10px;
+            margin-bottom: 20px;
+            letter-spacing: 5px;
             opacity: 0.9;
         }
 
-        .hero-intro {
-            font-size: 1.5rem;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 20px 40px;
-            border-radius: 50px;
-            display: inline-block;
-            border: 3px dashed var(--light);
+        .hero-location {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.8;
         }
 
         /* ========== About 섹션 ========== */
@@ -165,8 +162,8 @@
         }
 
         .about-image {
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             border: 10px solid var(--primary);
             box-shadow: 0 0 0 10px var(--secondary), 0 0 0 20px var(--accent);
@@ -190,6 +187,19 @@
             line-height: 1.8;
         }
 
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
         /* ========== Skills 섹션 ========== */
         #skills {
             background: var(--secondary);
@@ -197,44 +207,30 @@
         }
 
         .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 900px;
+            justify-content: center;
         }
 
-        .skill-card {
+        .skill-tag {
             background: var(--primary);
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            border: 5px solid var(--accent);
+            padding: 20px 35px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border: 4px solid var(--accent);
             cursor: pointer;
             transition: all 0.3s ease;
-            position: relative;
+            display: inline-block;
         }
 
-        .skill-card:hover {
+        .skill-tag:hover {
             animation: retroSpring 0.6s ease;
             background: var(--accent);
             color: var(--text-dark);
-        }
-
-        .skill-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .skill-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .skill-level {
-            font-size: 1rem;
-            opacity: 0.8;
+            transform: scale(1.1);
         }
 
         /* ========== Projects 섹션 ========== */
@@ -244,7 +240,7 @@
 
         .projects-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 40px;
             max-width: 1200px;
             width: 100%;
@@ -284,9 +280,38 @@
         }
 
         .project-description {
-            font-size: 1.1rem;
-            line-height: 1.6;
+            font-size: 1.05rem;
+            line-height: 1.7;
             color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .project-tech {
+            font-size: 0.95rem;
+            color: var(--secondary);
+            font-weight: bold;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px dashed var(--accent);
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 25px;
+            background: var(--accent);
+            color: var(--text-dark);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            border: 3px solid var(--secondary);
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: var(--primary);
+            color: var(--text-light);
+            transform: scale(1.05);
         }
 
         /* ========== Contact 섹션 ========== */
@@ -300,31 +325,60 @@
             max-width: 800px;
         }
 
+        .contact-message {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            border-radius: 20px;
+            border: 3px dashed var(--light);
+        }
+
         .contact-links {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
             margin-top: 40px;
         }
 
-        .contact-btn {
-            padding: 20px 40px;
-            background: var(--accent);
-            color: var(--text-dark);
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.3rem;
-            font-weight: bold;
-            border: 5px solid var(--secondary);
+        .contact-item {
+            background: var(--secondary);
+            padding: 25px;
+            border-radius: 20px;
+            border: 4px solid var(--accent);
             transition: all 0.3s ease;
-            display: inline-block;
         }
 
-        .contact-btn:hover {
+        .contact-item:hover {
             animation: retroSpring 0.6s ease;
-            background: var(--light);
-            transform: scale(1.1);
+            background: var(--accent);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-label {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .contact-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .contact-value a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .contact-value a:hover {
+            text-decoration: underline;
         }
 
         /* ========== Footer ========== */
@@ -411,12 +465,11 @@
 
             .hero-title {
                 font-size: 1.5rem;
-                letter-spacing: 5px;
+                letter-spacing: 3px;
             }
 
-            .hero-intro {
-                font-size: 1.2rem;
-                padding: 15px 25px;
+            .hero-location {
+                font-size: 1.1rem;
             }
 
             .section-title {
@@ -433,10 +486,33 @@
                 height: 200px;
             }
 
+            .about-text {
+                font-size: 1.1rem;
+                padding: 30px;
+            }
+
             .nav-item {
                 width: 40px;
                 height: 40px;
                 font-size: 16px;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-tag {
+                padding: 15px 25px;
+                font-size: 1.1rem;
+            }
+
+            .contact-links {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-message {
+                font-size: 1.2rem;
+                padding: 20px;
             }
         }
     </style>
@@ -457,9 +533,8 @@
         <section id="hero">
             <div class="hero-content">
                 <h1 class="hero-name">차정윤</h1>
-                <p class="hero-title">CHAJEONGYOON</p>
-                <h2 class="hero-title">VISUAL DESIGNER</h2>
-                <p class="hero-intro">귀요미 디자이너입니다! 🎨</p>
+                <h2 class="hero-title">UX/UI Designer & Educator</h2>
+                <p class="hero-location">📍 Seoul, Busan</p>
             </div>
         </section>
 
@@ -467,13 +542,11 @@
         <section id="about">
             <h2 class="section-title">About Me</h2>
             <div class="about-container">
-                <img src="https://via.placeholder.com/300" alt="차정윤 프로필" class="about-image">
+                <img src="images/profile.jpg" alt="차정윤 프로필" class="about-image">
                 <div class="about-text">
-                    <p>안녕하세요! 비주얼 디자이너 차정윤입니다. 🎨</p>
-                    <br>
-                    <p>레트로하고 빈티지한 감성을 현대적인 디자인에 녹여내는 것을 좋아합니다. 사용자의 마음을 움직이는 따뜻하고 개성 있는 디자인을 추구합니다.</p>
-                    <br>
-                    <p>브랜딩, 패키지 디자인, UI/UX 디자인 등 다양한 분야에서 경험을 쌓고 있으며, 항상 새로운 것을 배우고 도전하는 것을 즐깁니다.</p>
+                    <p>안녕하세요! <span class="highlight">사용자 경험을 디자인하는 차정윤</span>입니다.</p>
+                    <p><span class="highlight">10년 이상의 실무 경험</span>을 바탕으로 <span class="highlight">200명 이상의 디자이너</span>를 교육해왔습니다.</p>
+                    <p>복잡한 문제를 간단하고 아름답게 해결하는 것을 좋아합니다.</p>
                 </div>
             </div>
         </section>
@@ -482,36 +555,12 @@
         <section id="skills">
             <h2 class="section-title" style="color: var(--light);">Skills</h2>
             <div class="skills-container">
-                <div class="skill-card">
-                    <div class="skill-icon">🎨</div>
-                    <div class="skill-name">Graphic Design</div>
-                    <div class="skill-level">Adobe PS, AI, ID</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">📱</div>
-                    <div class="skill-name">UI/UX Design</div>
-                    <div class="skill-level">Figma, Sketch</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🎬</div>
-                    <div class="skill-name">Motion Graphics</div>
-                    <div class="skill-level">After Effects</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">📦</div>
-                    <div class="skill-name">Branding</div>
-                    <div class="skill-level">Logo, Package</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">✏️</div>
-                    <div class="skill-name">Illustration</div>
-                    <div class="skill-level">Digital, Hand Draw</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">💻</div>
-                    <div class="skill-name">Web Design</div>
-                    <div class="skill-level">HTML, CSS</div>
-                </div>
+                <div class="skill-tag">UX/UI Design</div>
+                <div class="skill-tag">Design Thinking</div>
+                <div class="skill-tag">Figma, Sketch, Adobe XD</div>
+                <div class="skill-tag">User Research</div>
+                <div class="skill-tag">Prototyping</div>
+                <div class="skill-tag">Team Leadership</div>
             </div>
         </section>
 
@@ -519,32 +568,43 @@
         <section id="projects">
             <h2 class="section-title">Projects</h2>
             <div class="projects-container">
+                <!-- 프로젝트 1 -->
                 <div class="project-card">
-                    <img src="https://via.placeholder.com/400x250/D84315/FFFFFF?text=Retro+Cafe+Branding" alt="프로젝트 1" class="project-image">
+                    <img src="images/project01.jpg" alt="모바일 뱅킹 앱 리뉴얼" class="project-image">
                     <div class="project-content">
-                        <h3 class="project-title">레트로 카페 브랜딩</h3>
-                        <p class="project-description">70년대 감성을 현대적으로 재해석한 카페 브랜드 아이덴티티 디자인. 로고, 메뉴판, 굿즈 등 전반적인 브랜딩 작업을 진행했습니다.</p>
+                        <h3 class="project-title">모바일 뱅킹 앱 리뉴얼</h3>
+                        <p class="project-description">
+                            사용자 경험을 개선하기 위한 모바일 뱅킹 앱 전면 리디자인 프로젝트.
+                            복잡한 금융 기능을 직관적인 UI로 재구성하여 사용자 만족도 40% 향상.
+                        </p>
+                        <p class="project-tech">🛠️ Figma, User Testing, Design System</p>
+                        <a href="https://example.com" target="_blank" class="project-link">프로젝트 보기 →</a>
                     </div>
                 </div>
+
+                <!-- 프로젝트 2 -->
                 <div class="project-card">
-                    <img src="https://via.placeholder.com/400x250/F57C00/FFFFFF?text=Vintage+Package" alt="프로젝트 2" class="project-image">
+                    <img src="images/project02.jpg" alt="AI 기반 학습 플랫폼" class="project-image">
                     <div class="project-content">
-                        <h3 class="project-title">빈티지 패키지 디자인</h3>
-                        <p class="project-description">수제 비누 브랜드의 패키지 디자인. 빈티지한 색감과 타이포그래피로 따뜻하고 감성적인 느낌을 표현했습니다.</p>
+                        <h3 class="project-title">AI 기반 학습 플랫폼</h3>
+                        <p class="project-description">
+                            개인 맞춤형 학습 경험을 제공하는 교육 플랫폼 디자인.
+                            AI 추천 알고리즘과 조화로운 인터페이스 설계로 학습 완료율 증가.
+                        </p>
+                        <p class="project-tech">🛠️ Sketch, Prototyping, A/B Testing</p>
                     </div>
                 </div>
+
+                <!-- 프로젝트 3 -->
                 <div class="project-card">
-                    <img src="https://via.placeholder.com/400x250/FFA726/FFFFFF?text=Retro+Game+UI" alt="프로젝트 3" class="project-image">
+                    <img src="images/project03.jpg" alt="기업 대시보드 시스템" class="project-image">
                     <div class="project-content">
-                        <h3 class="project-title">레트로 게임 UI</h3>
-                        <p class="project-description">80년대 아케이드 게임에서 영감을 받은 모바일 게임 UI/UX 디자인. 픽셀 아트와 네온 색상을 활용했습니다.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/400x250/FFE0B2/D84315?text=Illustration+Series" alt="프로젝트 4" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">일러스트레이션 시리즈</h3>
-                        <p class="project-description">일상의 소소한 순간들을 따뜻한 색감으로 표현한 일러스트레이션 시리즈. SNS에서 큰 호응을 얻었습니다.</p>
+                        <h3 class="project-title">기업 대시보드 시스템</h3>
+                        <p class="project-description">
+                            복잡한 데이터를 시각화하는 B2B 대시보드 UI/UX 디자인.
+                            사용자 리서치 기반으로 정보 구조를 최적화하여 업무 효율성 증대.
+                        </p>
+                        <p class="project-tech">🛠️ Adobe XD, Data Visualization</p>
                     </div>
                 </div>
             </div>
@@ -554,15 +614,22 @@
         <section id="contact">
             <h2 class="section-title" style="color: var(--light);">Contact</h2>
             <div class="contact-container">
-                <p style="font-size: 1.3rem; margin-bottom: 20px;">
-                    프로젝트 문의나 협업 제안은 언제나 환영합니다!<br>
-                    아래 링크를 통해 연락주세요. 😊
-                </p>
+                <div class="contact-message">
+                    프로젝트 협업이나 강의 문의는 언제든 환영합니다! 🎨
+                </div>
                 <div class="contact-links">
-                    <a href="mailto:chajeongyoon@example.com" class="contact-btn">📧 Email</a>
-                    <a href="https://instagram.com" target="_blank" class="contact-btn">📷 Instagram</a>
-                    <a href="https://behance.net" target="_blank" class="contact-btn">🎨 Behance</a>
-                    <a href="https://linkedin.com" target="_blank" class="contact-btn">💼 LinkedIn</a>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value">
+                            <a href="mailto:carcatj03@gmail.com">carcatj03@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-label">Phone</div>
+                        <div class="contact-value">010-9330-6146</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -585,9 +652,9 @@
             });
         });
 
-        // 스킬 카드 클릭 시 애니메이션
-        document.querySelectorAll('.skill-card').forEach(card => {
-            card.addEventListener('click', function() {
+        // 스킬 태그 클릭 시 애니메이션
+        document.querySelectorAll('.skill-tag').forEach(tag => {
+            tag.addEventListener('click', function() {
                 this.style.animation = 'retroSpring 0.6s ease';
                 setTimeout(() => {
                     this.style.animation = '';
@@ -598,6 +665,16 @@
         // 프로젝트 카드 클릭 시 애니메이션
         document.querySelectorAll('.project-card').forEach(card => {
             card.addEventListener('click', function() {
+                this.style.animation = 'retroSpring 0.6s ease';
+                setTimeout(() => {
+                    this.style.animation = '';
+                }, 600);
+            });
+        });
+
+        // Contact 아이템 클릭 시 애니메이션
+        document.querySelectorAll('.contact-item').forEach(item => {
+            item.addEventListener('click', function() {
                 this.style.animation = 'retroSpring 0.6s ease';
                 setTimeout(() => {
                     this.style.animation = '';
